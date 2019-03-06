@@ -1,0 +1,59 @@
+header
+    display: flex
+    position: fixed
+    background-image: linear-gradient(to right bottom, #f5f5dc, #8B4513)
+    padding: 0 10%
+    height: 80px
+    transition: .3s
+    width: 100vw
+    top: 0
+    left: 0
+    justify-content: space-between
+
+    &.small
+        height: 50px
+        background-color: rgba(0, 0, 0, .5)
+        background-image: initial
+        align-items: center
+
+        > h1
+            position: relative
+            bottom: auto
+            background-color: transparent
+            border: none
+            padding: 12px
+            transform: translate(0)
+        
+        > nav
+            align-items: center
+            padding-bottom: 0
+
+
+h1
+    color: #4a4a4a
+    background-color: #FFFFE0
+    padding: 8px
+    border: 4px solid
+    transition: 1s
+    transform: translate(0, 50px)
+    border-radius: 8px
+    display: flex
+    align-items: center
+
+nav
+    display: flex
+    align-items: flex-end
+    padding-bottom: 10px
+
+    li
+        margin-right: .5rem
+    
+    a
+        color: #692301
+        transition: .3s
+        font-size: 1.1rem
+        font-weight: 500
+
+        &:hover
+            color: brown
+            font-size: 1.2rem
