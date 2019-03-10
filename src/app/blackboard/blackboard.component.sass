@@ -1,5 +1,57 @@
 
 main
+    .eraser
+        z-index: 999
+        position: fixed
+        bottom: 120px
+        right: 20px
+        display: flex
+        color: #ffffff
+
+        > p
+            margin-right: 2rem
+            display: flex
+            align-items: center
+            opacity: .6
+            
+            @media(max-width: 768px)
+                display: none
+        
+        span
+            font-size: 1.5rem
+            margin-left: 0.5rem
+            margin-top: .2rem
+
+        > div
+            width: 4rem
+            height: 2rem
+            display: block
+            background-color: #FF9911
+            transform: rotate(-45deg) skew(10deg)
+            position: relative
+            border-radius: 8px 8px 10px 4px
+            border: .5px solid #999
+            border-top: 0
+            box-shadow: -3px 6px 30px 1px #666 
+
+            &::before, &::after
+                position: absolute
+                content: ''
+
+            &::before
+                background-color: #555
+                top: -4px
+                right: -2px
+                width: 90%
+                height: 1.8rem
+                border-radius: 8px
+            &::after
+                border-bottom: 1px solid #999
+                width: 12px
+                bottom: 5px
+                left: 0
+                transform: rotate(-40deg) skew(-20deg)
+
     .colorHolder
         z-index: 999
         position: fixed
@@ -15,6 +67,7 @@ main
             border-radius: 1rem .8rem
             transform: rotate(-45deg)
             position: relative
+            cursor: pointer
 
             &::after
                 position: absolute

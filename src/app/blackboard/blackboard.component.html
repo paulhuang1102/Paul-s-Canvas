@@ -1,4 +1,16 @@
 <main class="canvas">
+
+  <div class="eraser" (click)="handleErase()">
+    <p>
+      Press Space
+      <span>
+          &#10132;
+      </span>
+    </p>
+    
+    <div class="div"></div>
+  </div>
+
   <div class="colorHolder">
     <div (click)="handleColor(colors[0])" [ngStyle]="{'background': colors[0]}"></div>
     <div (click)="handleColor(colors[1])" [ngStyle]="{'background': colors[1]}"></div>
