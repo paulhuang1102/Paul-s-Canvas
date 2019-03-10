@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 import * as p5 from 'p5';
+import { a } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-blackboard',
@@ -37,7 +38,7 @@ export class BlackboardComponent implements OnInit {
       }
 
       s.setup = () => {
-        s.createCanvas(this.canvasHolder.offsetWidth, window.innerHeight - 80);
+        s.createCanvas(s.windowWidth, s.windowHeight - 80);
         s.background(this.backgroundColor);
       };
 
@@ -56,6 +57,13 @@ export class BlackboardComponent implements OnInit {
 
         }
       };
+
+      // bug will erase canvas
+      s.windowResized = () => {
+        s.resizeCanvas(s.windowWidth, s.windowHeight - 80);
+        s.background(this.backgroundColor);
+
+      }
     }
 
     let canvas = new p5(sketch);   
@@ -77,8 +85,22 @@ export class BlackboardComponent implements OnInit {
     }
   }
 
+  snapshot() {
+    const canvas = document.querySelector('canvas');
+    const a: ElementRef["nativeElement"] = document.createElement('a');
+    a.attr
+    canvas.toBlob((blob) => {
+      const url = window.URL.createObjectURL(blob);
+      a.href = url;
+      a.target = '_blank';
+      a.download = 'blackboard.png';
+
+      a.click();
+      window.URL.revokeObjectURL(url);
+    })
+  }
+
   // TODO
   // resize
   // snapshot
-  // clear
 }
