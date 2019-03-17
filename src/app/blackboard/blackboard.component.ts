@@ -1,6 +1,5 @@
-import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, OnDestroy } from '@angular/core';
 import * as p5 from 'p5';
-import { a } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-blackboard',
@@ -8,7 +7,7 @@ import { a } from '@angular/core/src/render3';
   styleUrls: ['./blackboard.component.sass']
 })
 
-export class BlackboardComponent implements OnInit {
+export class BlackboardComponent implements OnInit, OnDestroy {
   
   constructor(private elememtRef: ElementRef) {}
 
@@ -16,7 +15,8 @@ export class BlackboardComponent implements OnInit {
   private colors: string[] = ['#FFF', '#CD5C5C', '#FFFF00', '#4169E1'];
   private selectColor: string = this.colors[0];
   private backgroundColor = '#102012';
-  private eraseMode = false
+  private eraseMode = false;
+  private canvas;
 
   @HostListener('document:keydown', ['$event'])
   handleKeyDownEvent(event: KeyboardEvent) {
@@ -32,7 +32,6 @@ export class BlackboardComponent implements OnInit {
     this.canvasHolder = this.elememtRef.nativeElement.querySelector('.canvas')
 
     const sketch = (s) => {
-
       s.preload = () => {
         // preload code
       }
@@ -66,7 +65,12 @@ export class BlackboardComponent implements OnInit {
       }
     }
 
-    let canvas = new p5(sketch);   
+    this.canvas = new p5(sketch);   
+  }
+
+  ngOnDestroy(): void {
+    const canvas = document.querySelector('canvas');
+    document.body.removeChild(canvas);
   }
 
   handleColor(color): void {
@@ -102,5 +106,4 @@ export class BlackboardComponent implements OnInit {
 
   // TODO
   // resize
-  // snapshot
 }
