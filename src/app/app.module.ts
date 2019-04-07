@@ -6,13 +6,15 @@ import { BlackboardComponent } from './blackboard/blackboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { StarTrekComponent } from './star-trek/star-trek.component';
+import { FireworkComponent } from './firework/firework.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlackboardComponent,
     HeaderComponent,
-    StarTrekComponent
+    StarTrekComponent,
+    FireworkComponent
   ],
   imports: [
     BrowserModule,

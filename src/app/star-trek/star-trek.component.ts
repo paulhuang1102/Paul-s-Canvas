@@ -24,8 +24,8 @@ export class StarTrekComponent implements OnInit, OnDestroy {
       s.setup = () => {
         s.createCanvas(s.windowWidth, s.windowHeight * 3);
         stars = new Array(500).fill(0).map(() => new Star(s));
-        s.smooth();
-        s.filter(s.BLUR, 6 );
+        // s.smooth();
+        // s.filter(s.BLUR, 6 );
       };
       
       s.draw = () => {
