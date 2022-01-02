@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { StarTrekComponent } from './star-trek/star-trek.component';
 import { FireworkComponent } from './firework/firework.component';
+import { ShapeComponent } from './classes/shape/shape.component';
+import { VariableComponent } from './classes/variable/variable.component';
+import { LoopComponent } from './classes/loop/loop.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { FireworkComponent } from './firework/firework.component';
     BlackboardComponent,
     HeaderComponent,
     StarTrekComponent,
-    FireworkComponent
+    FireworkComponent,
+    ShapeComponent,
+    VariableComponent,
+    LoopComponent
   ],
   imports: [
     BrowserModule,
