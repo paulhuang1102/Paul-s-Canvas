@@ -4,7 +4,6 @@ import * as p5 from "p5";
 @Component({
   selector: "app-shape",
   templateUrl: "./shape.component.html",
-  styleUrls: ["./shape.component.css"],
 })
 export class ShapeComponent implements OnInit {
   constructor() {}

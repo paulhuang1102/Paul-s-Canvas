@@ -6,6 +6,8 @@ import { FireworkComponent } from "./firework/firework.component";
 import { ShapeComponent } from "./classes/shape/shape.component";
 import { VariableComponent } from "./classes/variable/variable.component";
 import { LoopComponent } from "./classes/loop/loop.component";
+import { ColorComponent } from "./classes/color/color.component";
+import { OperatorComponent } from "./classes/operator/operator.component";
 const appRoutes: Route[] = [
   { path: "blackboard", component: BlackboardComponent },
   { path: "star-trek", component: StarTrekComponent },
@@ -16,6 +18,8 @@ const appRoutes: Route[] = [
       { path: "shape", component: ShapeComponent },
       { path: "variable", component: VariableComponent },
       { path: "loop", component: LoopComponent },
+      { path: "color", component: ColorComponent },
+      { path: "operator", component: OperatorComponent },
     ],
   },
 ];
